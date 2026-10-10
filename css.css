@@ -1,0 +1,684 @@
+:root {
+    color-scheme: dark;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #10131d;
+    color: #f4f5f8;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 74% 40%, rgb(49 79 112 / 24%), transparent 38%),
+        #10131d;
+}
+
+.cover {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 32px clamp(24px, 7vw, 104px);
+    background-image: url("fotos/foto de tulio.jpeg");
+    background-position: center 35%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.topbar,
+.hero,
+.cover-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(18px, 2vw, 32px);
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(14px, 2.2vw, 30px);
+}
+
+.site-nav a {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-shadow: 1px 2px 4px rgb(0 0 0 / 75%);
+    transition: color 160ms ease, transform 160ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    color: #9dc7f2;
+    transform: translateY(-3px);
+}
+
+.site-nav a[aria-current="page"] {
+    color: #9dc7f2;
+}
+
+.brand-mark {
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.brand:hover .brand-mark,
+.brand:focus-visible .brand-mark {
+    transform: scale(1.08);
+    background: rgb(157 199 242 / 18%);
+}
+
+.topbar-note {
+    margin-left: 0;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.brand-mark {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: 12px;
+    background: rgb(255 255 255 / 5%);
+    color: #9dc7f2;
+    font-size: 1rem;
+}
+
+.topbar-note,
+.cover-footer {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.topbar-note {
+    color: #000000;
+}
+
+.hero {
+    display: flex;
+    width: min(100%, 1100px);
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 96px;
+}
+
+.hero-copy {
+    max-width: 800px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 24px;
+    color: #26364a;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+    width: 30px;
+    height: 1px;
+    background: #26364a;
+    content: "";
+}
+
+.initial-letter {
+    font-size: 1.5em;
+}
+
+.about-greeting {
+    color: #ffffff;
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+    font-weight: 700;
+    letter-spacing: normal;
+    text-transform: none;
+    text-shadow: 1px 2px 6px rgb(0 0 0 / 70%);
+}
+
+h1 {
+    max-width: 900px;
+    margin: 0;
+    font-size: clamp(3.5rem, 10vw, 8.5rem);
+    font-weight: 650;
+    letter-spacing: -0.075em;
+    line-height: 0.98;
+}
+
+h1 span {
+    display: block;
+    color: #9dc7f2;
+}
+
+.intro {
+    max-width: 510px;
+    margin: 30px 0 0;
+    color: #ffffff;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.8;
+    text-shadow: 1px 2px 4px rgb(0 0 0 / 75%);
+}
+
+.cover-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgb(255 255 255 / 12%);
+    color: #ffffff;
+    text-shadow: 1px 2px 4px rgb(0 0 0 / 75%);
+}
+
+.scroll-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.scroll-hint span {
+    color: #9dc7f2;
+    font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+    .cover {
+        padding: 24px;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .site-nav {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .site-nav a {
+        font-size: 1rem;
+    }
+
+    .topbar-note {
+        font-size: 0.62rem;
+    }
+
+    .hero {
+        padding: 64px 0 80px;
+    }
+
+    .cover-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 0.65rem;
+    }
+}
+
+.inner-page {
+    min-height: 100vh;
+    padding: 32px clamp(24px, 7vw, 104px);
+    background:
+        radial-gradient(ellipse at 74% 40%, rgb(49 79 112 / 24%), transparent 38%),
+        #10131d;
+}
+
+.resume-page {
+    background-image: url("fotos/arraia (3).jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contacts-page {
+    background-image: url("fotos/marinha 11.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contact-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.contact-heading h1 {
+    margin: 0;
+}
+
+.contact-phone {
+    width: clamp(40px, 6vw, 64px);
+    flex: none;
+    color: #000000;
+}
+
+.resume-page .page-content h1,
+.resume-page .education-list,
+.contacts-page .page-content h1,
+.contacts-page .contact-list {
+    color: #000000;
+    text-shadow: none;
+}
+
+.resume-page .page-content {
+    padding: 28px clamp(20px, 4vw, 40px);
+    border-radius: 16px;
+    background: rgb(190 215 236 / 94%);
+    backdrop-filter: blur(3px);
+}
+
+.contacts-page .page-content {
+    padding: 28px clamp(20px, 4vw, 40px);
+    border-radius: 16px;
+    background: rgb(190 215 236 / 94%);
+    backdrop-filter: blur(3px);
+}
+
+.contacts-page .contact-list a {
+    color: #000000;
+}
+
+.resume-page .page-content h1,
+.resume-page .education-list {
+    font-weight: 700;
+}
+
+.inner-page .topbar {
+    justify-content: flex-start;
+}
+
+.inner-page .topbar-note {
+    color: #a1a8b7;
+}
+
+.page-content {
+    width: min(100%, 900px);
+    margin: clamp(72px, 12vh, 140px) auto 0;
+}
+
+.education-layout {
+    display: grid;
+    width: min(100%, 1200px);
+    grid-template-columns: minmax(0, 1.2fr) minmax(200px, 0.8fr);
+    align-items: start;
+    gap: clamp(20px, 3vw, 42px);
+    margin: clamp(72px, 12vh, 140px) 0 0;
+}
+
+.marinha-gallery {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+}
+
+.marinha-gallery img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: clamp(150px, 18vw, 220px);
+    border: 8px solid #ffffff;
+    border-radius: 5px;
+    background: #ffffff;
+    object-fit: cover;
+    box-shadow: 0 10px 24px rgb(0 0 0 / 28%);
+}
+
+.marinha-gallery img:first-child {
+    transform: rotate(-3deg);
+    z-index: 1;
+}
+
+.marinha-gallery img + img {
+    margin-top: -20px;
+    transform: rotate(2.5deg);
+    z-index: 2;
+}
+
+.education-copy {
+    min-width: 0;
+}
+
+.education-gallery {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2px;
+    border-top: 2px solid #ffffff;
+}
+
+.education-gallery img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: clamp(150px, 19vw, 220px);
+    border: 9px solid #ffffff;
+    border-radius: 5px;
+    background: #ffffff;
+    object-fit: cover;
+    box-shadow: 0 10px 24px rgb(0 0 0 / 28%);
+    transition: transform 180ms ease;
+}
+
+.education-gallery img:first-child {
+    width: 100%;
+    height: clamp(150px, 19vw, 220px);
+    margin-top: -4px;
+    border: 9px solid #ffffff;
+    clip-path: none;
+    z-index: 1;
+}
+
+.education-gallery img + img {
+    margin-top: -28px;
+}
+
+.education-gallery img:nth-child(2) {
+    transform: rotate(2.5deg);
+    z-index: 2;
+}
+
+.education-gallery img:nth-child(3) {
+    transform: rotate(-1.5deg);
+    z-index: 3;
+}
+
+.about-content {
+    width: min(100%, 1200px);
+    margin: clamp(72px, 12vh, 140px) 0 0;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+    align-items: stretch;
+    gap: clamp(28px, 5vw, 64px);
+}
+
+.about-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+.about-copy {
+    min-width: 0;
+}
+
+.about-heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.about-heading .eyebrow {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.fishing-illustration {
+    width: clamp(140px, 17vw, 210px);
+    flex: none;
+    color: #9dc7f2;
+    filter: drop-shadow(1px 2px 4px rgb(0 0 0 / 45%));
+}
+
+.page-content h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+}
+
+.education-heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.resume-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.resume-heading h1 {
+    margin: 0;
+}
+
+.work-bag {
+    width: clamp(64px, 9vw, 100px);
+    flex: none;
+    color: #000000;
+}
+
+.experience-heading {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.experience-page {
+    display: grid;
+    width: min(100%, 1200px);
+    grid-template-columns: minmax(180px, 0.5fr) minmax(0, 1.5fr);
+    align-items: start;
+    gap: clamp(24px, 4vw, 56px);
+    margin: clamp(72px, 12vh, 140px) 0 0;
+}
+
+.experience-copy {
+    min-width: 0;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.experience-page .marinha-gallery {
+    padding-top: 12px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.experience-heading h1 {
+    margin: 0;
+}
+
+.experience-boat {
+    width: clamp(76px, 10vw, 112px);
+    flex: none;
+    color: #9dc7f2;
+    filter: drop-shadow(1px 2px 4px rgb(0 0 0 / 40%));
+}
+
+.graduation-cap {
+    width: clamp(64px, 9vw, 100px);
+    flex: none;
+    color: #9dc7f2;
+    filter: drop-shadow(1px 2px 4px rgb(0 0 0 / 40%));
+}
+
+.education-quote {
+    max-width: 760px;
+    margin: 20px 0 0;
+    color: #b6bdc9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.page-content p:not(.eyebrow) {
+    max-width: 620px;
+    color: #b6bdc9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.education-list {
+    max-width: 760px;
+    margin: 32px 0 0;
+    padding-left: 1.4em;
+    color: #b6bdc9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.education-list li + li {
+    margin-top: 18px;
+}
+
+.experience-list {
+    display: grid;
+    gap: 24px;
+    max-width: 900px;
+    margin: 36px 0 0;
+    padding-left: 1.4em;
+    color: #b6bdc9;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.experience-list li {
+    padding-left: 6px;
+}
+
+.experience-list h2 {
+    margin: 0 0 6px;
+    color: #f4f5f8;
+    font-size: 1.18rem;
+    line-height: 1.4;
+}
+
+.experience-list p {
+    margin: 6px 0 0;
+}
+
+.experience-list p strong {
+    color: #9dc7f2;
+}
+
+.experience-list .experience-organization {
+    color: #9da8b8;
+}
+
+.contact-list {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0;
+    padding: 0;
+    color: #b6bdc9;
+    font-size: 1.1rem;
+    list-style: none;
+}
+
+.contact-list a {
+    color: #9dc7f2;
+    text-decoration: none;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+    text-decoration: underline;
+}
+
+.contact-note {
+    color: #9da8b8 !important;
+    font-size: 0.9rem !important;
+}
+
+@media (max-width: 600px) {
+    .inner-page {
+        padding: 24px;
+    }
+
+    .inner-page .topbar {
+        flex-wrap: wrap;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .education-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .education-copy,
+    .education-gallery,
+    .marinha-gallery {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .experience-page {
+        grid-template-columns: 1fr;
+    }
+
+    .marinha-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .marinha-gallery img {
+        height: 150px;
+    }
+
+    .marinha-gallery img + img {
+        margin-top: 0;
+    }
+
+    .education-gallery img {
+        height: 150px;
+    }
+
+    .education-gallery img:first-child {
+        width: 100%;
+        height: 150px;
+        margin-top: 0;
+    }
+
+    .education-gallery img + img {
+        margin-top: -22px;
+    }
+
+    .about-photo {
+        width: min(100%, 360px);
+        max-height: 460px;
+    }
+
+    .fishing-illustration {
+        width: clamp(110px, 30vw, 150px);
+    }
+}
